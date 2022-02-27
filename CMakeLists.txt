@@ -82,7 +82,7 @@ enable_testing()
 add_subdirectory(test)
 endif()
 
-get_directory_property(TARGETS BUILDSYSTEM_TARGETS)
+get_directory_property(TARGETS list(BUILDSYSTEM_TARGETS REMOVE_ITEM gtest))
 install(
   TARGETS ${TARGETS} 
   LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
